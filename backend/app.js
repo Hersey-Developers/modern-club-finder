@@ -12,6 +12,8 @@ app.options("*", cors());
 
 app.use("/api/samples", sampleRoutes);
 
+// Implement your routes here.
+
 app.use(() => {
     const error = new Error("Could not find this route.");
     error.status = 404;

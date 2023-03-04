@@ -57,7 +57,8 @@
     "minimatch": "^3.1.2",
     "minipass": "^4.2.4",
     "moment": "^2.29.4",
-    "mongoose": "^7.0.0"
+    "mongoose": "^7.0.0",
+    "nodemon": "^2.0.21"
   },
   "devDependencies": {},
   "scripts": {

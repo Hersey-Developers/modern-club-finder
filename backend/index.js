@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const dbUrl = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.oz0iqlb.mongodb.net/?retryWrites=true&w=majority`;
+const dbUrl = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_URL}/?retryWrites=true&w=majority`;
 
 mongoose
   .connect(dbUrl, {
