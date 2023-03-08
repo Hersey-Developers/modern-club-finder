@@ -5,8 +5,6 @@ const express = require("express");
 
 const router = express.Router();
 
-<<<<<<< HEAD
-=======
 // Activities Test Objects in MongoDB:
 
 // 6406ba77f7046e089abb7f12
@@ -28,8 +26,6 @@ const router = express.Router();
     // location: "Hersey"
     // link: "https://www.google.com"
     // displayedPublically: false
-
->>>>>>> da4bc4f675e0a883835afeffc1d193c95ec6c84c
 // Get all Activity objects
 router.get("/", async (req, res) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
