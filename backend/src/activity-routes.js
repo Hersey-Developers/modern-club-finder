@@ -5,6 +5,11 @@ const express = require("express");
 
 const router = express.Router();
 
+// Activities Test Objects in MongoDB:
+
+// 6406ba77f7046e089abb7f12
+// 6406baf375deec242f93ce5f
+
 // Get all Activity objects
 router.get("/", async (req, res) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
