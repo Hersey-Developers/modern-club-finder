@@ -5,6 +5,31 @@ const express = require("express");
 
 const router = express.Router();
 
+<<<<<<< HEAD
+=======
+// Activities Test Objects in MongoDB:
+
+// 6406ba77f7046e089abb7f12
+    // name: "Test"
+    // categories: ["Test 1", "Test 2", "Test 3"]
+    // description: "Test"
+    // meetingDays: ["Monday", "Tuesday"]
+    // meetingStartEndTimes: "9:00AM-10:00PM"
+    // location: "Hersey"
+    // link: "https://www.google.com"
+    // displayedPublically: false
+
+// 6406baf375deec242f93ce5f
+    // name: "Test 2"
+    // categories: ["Test 1", "Test 2", "Test 3"]
+    // description: "Test 2"
+    // meetingDays: ["Monday", "Tuesday"]
+    // meetingStartEndTimes: "9:00AM-10:00PM"
+    // location: "Hersey"
+    // link: "https://www.google.com"
+    // displayedPublically: false
+
+>>>>>>> da4bc4f675e0a883835afeffc1d193c95ec6c84c
 // Get all Activity objects
 router.get("/", async (req, res) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 

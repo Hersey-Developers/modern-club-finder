@@ -3,7 +3,11 @@ const express = require('express');
 
 const router = express.Router();
 
+<<<<<<< HEAD
 // Sign in the user
+=======
+// Create a new user account
+>>>>>>> da4bc4f675e0a883835afeffc1d193c95ec6c84c
 router.post("/signup", async (req, res) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
 
