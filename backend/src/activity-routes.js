@@ -26,7 +26,6 @@ const router = express.Router();
     // location: "Hersey"
     // link: "https://www.google.com"
     // displayedPublically: false
-
 // Get all Activity objects
 router.get("/", async (req, res) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
