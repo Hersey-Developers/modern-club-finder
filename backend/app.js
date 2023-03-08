@@ -2,7 +2,9 @@ const cors = require("cors");
 const express = require("express")
 const bodyParser = require("body-parser");
 
-const sampleRoutes = require("./routes/samples/sample-routes");
+const activityRoutes = require("./src/activity-routes");
+const dummyRoutes = require("./src/dummy-routes");
+const userRoutes = require("./src/user-routes");
 
 const app = express();
 
@@ -10,9 +12,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.options("*", cors());
 
-app.use("/api/samples", sampleRoutes);
-
-// Implement your routes here.
+app.use("/activities", activityRoutes);
+app.use("/dummies", dummyRoutes);
+app.use("/users", userRoutes);
 
 app.use(() => {
     const error = new Error("Could not find this route.");
