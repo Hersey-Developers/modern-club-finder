@@ -39,14 +39,31 @@ router.get("/", async (req, res) => {
 
 
 // Get a specific Activity object
-router.get("/:activityId", async (req, res) => {
+router.get("/:activityId", async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
+    const activityId = req.params.activityId;
 
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+    Activity.findById(activityId)
+        .then(activity => {
+            if (!activity) {
+                const error = new Error('Could not find the activity.');
+                error.statusCode = 404;
+                throw error;
+            }
+
+            res
+                .status(200)
+                .json({
+                    message: 'Activity fetched',
+                    activity: activity
+                });
+        })
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        });
 });
 
 // Create a new Activity object
