@@ -186,14 +186,29 @@ router.patch("/:activityId", async (req, res, next) => {
 });
 
 // Delete a specific Activity object
-router.delete("/:activityId", async (req, res) => {
+router.delete("/:activityId", async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
+    const activityId = req.params.activityId;
 
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+    Activity.findById(activityId)
+        .then(activity => {
+            if (!activity) {
+                const error = new Error('Could not find the activity.');
+                error.statusCode = 404;
+                throw error;
+            }
+
+            return Activity.findByIdAndDelete(activityId);
+        })
+        .then(result => {
+            res.status(200).json({message: 'Deleted Activity'});
+        })
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        });
 });
 
 module.exports = router;
