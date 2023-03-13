@@ -1,17 +1,14 @@
 import React from "react";
-import Search from "./components/search/search";
-import Modal from "./components/modal/modal";
-import Homepage from "./components/homepage/homepage";
+import HomePage from "./pages/Homepage";
+import SearchPage from "./pages/Search";
+import "./Poppins.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="">
-      <h1>I'm in app!</h1>
-      <Homepage />
-      <Search />
-      <Modal />
+    <div>
+      <HomePage />
     </div>
   );
-}
+};
 
 export default App;
