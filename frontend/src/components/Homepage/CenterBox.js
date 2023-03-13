@@ -5,6 +5,7 @@ import Vector from "../Homepage/resources/Vector.png";
 import Areas from "../Homepage/resources/Areas.png";
 import Dates from "../Homepage/resources/Dates.png";
 import Chevron from "../Homepage/resources/Chevron.png";
+import { useHistory } from "react-router-dom";
 
 const CenterBox = () => {
   const subjects = ["Coding", "Math", "Science", "English", "History"];
@@ -18,6 +19,12 @@ const CenterBox = () => {
   days.forEach((day) => {
     dayComponents.push(<DaysOfWeek day={day} />);
   });
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/searchpage");
+  };
 
   return (
     <div className="bg-box">
@@ -79,7 +86,7 @@ const CenterBox = () => {
 
       <br />
 
-      <button className="next-button transition duration-500 hover:scale-105">
+      <button onClick={handleClick} className="next-button transition duration-500 hover:scale-105">
         <div style={{ display: "inline-block" }}>
           <h2 style={{ display: "inline-block" }}>Find Clubs</h2>
           <img

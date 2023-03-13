@@ -32,7 +32,6 @@ const Club = () => {
       "158",
       "Bob Brown",
     ],
-    
   ];
   const reusableClubArray = [];
 
