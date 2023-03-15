@@ -5,6 +5,7 @@ import Calendar from "./resources/Calendar.png";
 import Clock from "./resources/Clock.png";
 import Person from "./resources/Person.png";
 import Ping from "./resources/Ping.png";
+import Modal from "../../pages/Modal";
 
 const ReusableClub = (props) => {
   const clubs = new Clubs(props.sub);
@@ -15,7 +16,7 @@ const ReusableClub = (props) => {
   });
 
   return (
-    <div className="club-box inline-block">
+    <div className="club-box inline-block transition-all duration-500 ease-in-out hover:scale-105">
       <h1 className="heading-component">{clubs.getClubName()}</h1>
 
       <div style={{ display: "inline-block" }}>{subComponents}</div>
@@ -59,10 +60,6 @@ const ReusableClub = (props) => {
           />
           <p class="col-span-1" style={{ display: "inline-block" }}>{clubs.getSponsor()}</p>
         </div>
-
-        
-        
-        
       </div>
     </div>
   );

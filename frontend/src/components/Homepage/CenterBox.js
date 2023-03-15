@@ -86,7 +86,7 @@ const CenterBox = () => {
 
       <br />
 
-      <button onClick={handleClick} className="next-button transition duration-500 hover:scale-105">
+      <button onClick={handleClick} className="next-button transition-all duration-500 ease-in-out hover:scale-105">
         <div style={{ display: "inline-block" }}>
           <h2 style={{ display: "inline-block" }}>Find Clubs</h2>
           <img
