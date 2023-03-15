@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'phone': '400px',
-        'tablet': '1100px',
-        'laptop': '1280px',
-        'desktop': '1580px',
+        'phone': '549px',
+        'tablet': '700px',
+        'laptop': '1275px',
+        'desktop': '1600px',
       },
     },
     colors: {

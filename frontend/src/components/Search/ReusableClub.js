@@ -16,7 +16,7 @@ const ReusableClub = (props) => {
   });
 
   return (
-    <div className="club-box inline-block transition-all duration-500 ease-in-out hover:scale-105">
+    <div className="club-box inline-block pr-2 transition-all duration-500 ease-in-out hover:scale-105">
       <h1 className="heading-component">{clubs.getClubName()}</h1>
 
       <div style={{ display: "inline-block" }}>{subComponents}</div>

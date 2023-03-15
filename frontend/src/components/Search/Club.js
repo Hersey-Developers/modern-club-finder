@@ -40,7 +40,7 @@ const Club = (props) => {
     reusableClubArray.push(<ReusableClub className="inline-block" sub={sub}/>);
   });
   return (
-  <div className="div-margin grid grid-cols-1 phone: grids-cols-1 gap-4 tablet:grid-cols-2 gap-4 laptop:grid-cols-2 gap-4 desktop:grid-cols-3 gap-4">{reusableClubArray}</div>
+  <div className="div-margin ml-10 mr-10 grid grid-cols-1 phone: grids-cols-2 gap-2 ml-10 mr-10 tablet:grid-cols-2 gap-2 ml-10 mr-10 laptop:grid-cols-3 gap-2 ml-10 mr-10 desktop:grid-cols-3 gap-5 ml-10 mr-10">{reusableClubArray}</div>
   );
 };
 
