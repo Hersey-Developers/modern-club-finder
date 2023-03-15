@@ -14,7 +14,6 @@
     font-size: 14px;
     line-height: 17px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
     gap: 20;
   }
   .my-button-unclicked:hover {
@@ -37,7 +36,6 @@
     font-size: 14px;
     line-height: 17px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
     gap: 20;
   }
   .my-button-clicked:hover {
