@@ -44,7 +44,6 @@
     width: 536;
     height: 100%;
     margin-top: 31px;
-    margin-left: 44px;
     padding-left: 17px;
     padding-top: 17px;
 
@@ -85,14 +84,14 @@
     background-color: #e6e6e6;
   }
 
-  .div-margin {
+  /* .div-margin {
     margin-right: 44px;
-  }
+  } */
 
   @media (max-width: 600px) {
     .club-box{
       width: 90%;
-      margin-left: 20px;
+      /* margin-left: 20px; */
       
     }
 

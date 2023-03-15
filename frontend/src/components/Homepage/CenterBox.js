@@ -48,7 +48,7 @@ const CenterBox = () => {
         id="my-text-field"
         name="name"
         placeholder="Club name"
-        className="mt-3 p-2 rounded-lg text-field-style"
+        className="mt-3 p-2 rounded-lg text-field-style transition-all duration-500 ease-in-out hover:scale-105"
       />
 
       <br />

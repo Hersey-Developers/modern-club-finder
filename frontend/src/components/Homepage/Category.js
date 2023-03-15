@@ -14,9 +14,8 @@ const Category = (props) => {
 
       <button
         id={props.sub}
-        className="my-button-unclicked"
-        onClick={handleClick}
-      >
+        className="my-button-unclicked transition-all duration-500 ease-in-out hover:scale-105"
+        onClick={handleClick}>
         {props.sub}
       </button>
     </div>
