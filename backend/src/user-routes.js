@@ -57,10 +57,10 @@ async (req, res) => {
     }
     bcrypt
     .hash(password, 12)
-    .then(hashedPassword => {
+    .then(passwordHash => {
         const user = new User({
             email: email,
-            password: hashedPassword,
+            password: passwordHash,
         });
         return user.save();
         // return res.redirect('/login'); // no login page
@@ -196,7 +196,7 @@ router.post("/change-password", async (req, res) => {
             return bcrypt.hash(newPassword, 12);
         })
         .then(hashedPassword => {
-            resetUser.password = hashedPassword;
+            resetUser.passwordHash = hashedPassword;
             resetUser.forgotTokenPassword = null;
             resetUser.resetTokenExpiration = undefined;
             return resetUser.save();
