@@ -1,6 +1,7 @@
 // Activity Routes
 
 const Activity = require("../models/activity");
+const Auth = require('./auth');
 const express = require("express");
 
 const router = express.Router();
@@ -28,7 +29,7 @@ const router = express.Router();
     // displayedPublically: false
 // Get all Activity objects
 
-router.get("/", async (req, res) => {
+router.get("/", Auth.setCsrfHeader, Auth.checkToken, async (req, res) => {
   try {
     const query = {};
     if (req.query.name) {
@@ -48,7 +49,7 @@ router.get("/", async (req, res) => {
   }
 });
 // Get a specific Activity object
-router.get("/:activityId", async (req, res, next) => {
+router.get("/:activityId", Auth.setCsrfHeader, Auth.checkToken, async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
@@ -77,7 +78,7 @@ router.get("/:activityId", async (req, res, next) => {
 
 // Create a new Activity object
 
-router.post("/", async (req, res) => {
+router.post("/", Auth.validateCsrfHeader, async (req, res) => {
     try {
       const activity = new Activity(req.body);
       await activity.save();
@@ -89,7 +90,7 @@ router.post("/", async (req, res) => {
   });
   
 // Update a specific Activity object
-router.patch("/:activityId", async (req, res, next) => {
+router.patch("/:activityId", Auth.validateCsrfHeader, async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
@@ -197,7 +198,7 @@ router.patch("/:activityId", async (req, res, next) => {
 });
 
 // Delete a specific Activity object
-router.delete("/:activityId", async (req, res, next) => {
+router.delete("/:activityId", Auth.validateCsrfHeader, async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
