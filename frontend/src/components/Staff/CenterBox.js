@@ -51,7 +51,7 @@ const CenterBox = () => {
             setPassword(e.target.value);
             handleInputChange(e);
           }}
-          className="mt-3 p-2 rounded-lg text-field-style-staff"
+          className="mt-3 p-2 mb-2 rounded-lg text-field-style-staff"
         />
         <button
           type="button"
@@ -65,7 +65,7 @@ const CenterBox = () => {
           )}
         </button>
       </div>
-      {showWarning && <h1 className="text-error-red mt-2 font-bold">ERROR: Spaces not allowed </h1>}
+      {showWarning && <h1 className="text-error-red font-bold">ERROR: Spaces not allowed </h1>}
       {showEmptyFieldsError && (
         <h1 className="text-error-red font-bold">ERROR: Please fill in both fields</h1>
       )}
