@@ -1,6 +1,7 @@
 // Activity Routes
 
 const Activity = require("../models/activity");
+const Auth = require('./auth');
 const express = require("express");
 
 const router = express.Router();
@@ -27,19 +28,28 @@ const router = express.Router();
     // link: "https://www.google.com"
     // displayedPublically: false
 // Get all Activity objects
-router.get("/", async (req, res) => {
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
 
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
+router.get("/", Auth.setCsrfHeader, Auth.checkToken, async (req, res) => {
+  try {
+    const query = {};
+    if (req.query.name) {
+      query.name = req.query.name;
+    }
+    if (req.query.categories) {
+      query.categories = { $in: req.query.categories };
+    }
+    if (req.query.availableDays) {
+      query.meetingDays = { $in: req.query.availableDays };
+    }
+    const activities = await Activity.find(query);
+    res.status(200).json(activities);
+  } catch (error) {
+    console.error(error);
+    res.status(400).send("Failed to retrieve activities");
+  }
 });
-
-
 // Get a specific Activity object
-router.get("/:activityId", async (req, res, next) => {
+router.get("/:activityId", Auth.setCsrfHeader, Auth.checkToken, async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
@@ -67,18 +77,20 @@ router.get("/:activityId", async (req, res, next) => {
 });
 
 // Create a new Activity object
-router.post("/", async (req, res) => {
-    // --- YOUR CODE GOES UNDER THIS LINE --- 
 
-    // --------- DELETE THIS CONTENT --------
-    res.send({
-        message: "Hello World"
-    })
-    // -------------------------------------
-});
-
+router.post("/", Auth.validateCsrfHeader, async (req, res) => {
+    try {
+      const activity = new Activity(req.body);
+      await activity.save();
+      res.status(201).json(activity);
+    } catch (error) {
+      console.error(error);
+      res.status(400).send("Failed to create activity");
+    }
+  });
+  
 // Update a specific Activity object
-router.patch("/:activityId", async (req, res, next) => {
+router.patch("/:activityId", Auth.validateCsrfHeader, async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
@@ -186,7 +198,7 @@ router.patch("/:activityId", async (req, res, next) => {
 });
 
 // Delete a specific Activity object
-router.delete("/:activityId", async (req, res, next) => {
+router.delete("/:activityId", Auth.validateCsrfHeader, async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
