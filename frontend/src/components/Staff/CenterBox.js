@@ -56,7 +56,7 @@ const CenterBox = () => {
         <button
           type="button"
           onClick={togglePasswordVisibility}
-          className="absolute inset-y-3 right-0 pr-3 pt-3 flex items-center"
+          className="absolute inset-y-3 right-0 pr-3 pt-3 pb-2 flex items-center"
         >
           {showPassword ? (
             <FiEye className="text-system-blue" />
