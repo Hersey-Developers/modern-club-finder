@@ -152,46 +152,22 @@
 
   @media (max-width: 740px) {
     .bg-box{
-      width: 100%;
-      margin-left: 20px;
-      margin-right:20px;
+      width: 640px;
       
-    }
-    .header-font {
-      margin-left: 20px;
-      margin-right:20px;
-    }
-
-    .header-description-font {
-      margin-left: 20px;
-      margin-right:20px;
-    }
-
-    .contact-style {
-      margin-left: 20px;
-      margin-right:20px;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 640px) {
     .bg-box{
-      width: 90%;
-      margin-left: 20px;
-      margin-right:20px;
+      width: 540px;
       
     }
-    .header-font {
-      margin-left: 20px;
-      margin-right:20px;
+  }
+
+  @media (max-width: 549px) {
+    .bg-box{
+      width: 95%;
+      
     }
 
-    .header-description-font {
-      margin-left: 20px;
-      margin-right:20px;
-    }
-
-    .contact-style {
-      margin-left: 20px;
-      margin-right:20px;
-    }
   }

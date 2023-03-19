@@ -5,7 +5,6 @@ import Calendar from "./resources/Calendar.png";
 import Clock from "./resources/Clock.png";
 import Person from "./resources/Person.png";
 import Ping from "./resources/Ping.png";
-import Modal from "../../pages/Modal";
 
 const ReusableClub = (props) => {
   const clubs = new Clubs(props.sub);

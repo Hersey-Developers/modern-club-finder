@@ -27,7 +27,7 @@ const CenterBox = () => {
   };
 
   return (
-    <div className="bg-box">
+    <div className="bg-box phone: w-9/10 tablet:w-9/10 laptop:w-749px desktop: w-749px">
       <div style={{ display: "inline-block" }}>
         <img
           src={Vector}

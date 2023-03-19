@@ -1,4 +1,5 @@
 import React from "react";
+import './styles/Homepage.css'
 
 const Contact = () => {
   const questions = {
