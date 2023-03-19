@@ -1,0 +1,75 @@
+.bg-box-staff {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+
+    width: 565px;
+    height: auto;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .text-field-style-staff {
+    width: 100%;
+    height: 37px;
+    background: #f4f4f4;
+    border: 1px solid #c0c0c0;
+  }
+
+  .next-button-staff {
+    font-family: "Poppins";
+    font-style: normal;
+    display: inline-block;
+    padding: 10px 13px;
+    background-color: #007aff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  
+  .next-button-staff:hover {
+    background-color: #0066d2;
+  }
+
+  .all-button-staff {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #007aff;
+  }
+  
+  .all-button-staff:hover {
+    color: #0066d2;
+  }
+
+  @media (max-width: 740px) {
+    .bg-box-staff{
+      width: 640px;
+      
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bg-box-staff{
+      width: 540px;
+      
+    }
+  }
+
+  @media (max-width: 549px) {
+    .bg-box-staff{
+      width: 95%;
+      
+    }
+
+  }
