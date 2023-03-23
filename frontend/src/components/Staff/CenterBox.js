@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import Chevron from "../Homepage/resources/Chevron.png";
+import Checkbox from "./Checkbox";
 
 const CenterBox = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -71,10 +72,10 @@ const CenterBox = () => {
       )}
 
       <br />
-      <br />
+      <Checkbox label="Stay signed in" />
       <button
         onClick={handleLoginClick}
-        className="next-button-staff transition-all duration-500 ease-in-out hover:scale-105"
+        className="mt-2 next-button-staff transition-all duration-500 ease-in-out hover:scale-105"
       >
         <div style={{ display: "inline-block" }}>
           <h2 style={{ display: "inline-block" }} className="mr-12">
