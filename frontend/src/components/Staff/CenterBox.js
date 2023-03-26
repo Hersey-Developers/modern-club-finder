@@ -71,8 +71,11 @@ const CenterBox = () => {
         <h1 className="text-error-red font-bold">ERROR: Please fill in both fields</h1>
       )}
 
-      <br />
+      
       <Checkbox label="Stay signed in" />
+
+      <br />
+      
       <button
         onClick={handleLoginClick}
         className="mt-2 next-button-staff transition-all duration-500 ease-in-out hover:scale-105"
