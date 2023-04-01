@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import Chevron from "../Homepage/resources/Chevron.png";
+import Checkbox from "./Checkbox";
 
 const CenterBox = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -56,7 +57,7 @@ const CenterBox = () => {
         <button
           type="button"
           onClick={togglePasswordVisibility}
-          className="absolute inset-y-3 right-0 pr-3 pt-3 flex items-center"
+          className="absolute inset-y-3 right-0 pr-3 pt-3 pb-2 flex items-center"
         >
           {showPassword ? (
             <FiEye className="text-system-blue" />
@@ -70,11 +71,14 @@ const CenterBox = () => {
         <h1 className="text-error-red font-bold">ERROR: Please fill in both fields</h1>
       )}
 
+      
+      <Checkbox label="Stay signed in" />
+
       <br />
-      <br />
+      
       <button
         onClick={handleLoginClick}
-        className="next-button-staff transition-all duration-500 ease-in-out hover:scale-105"
+        className="mt-2 next-button-staff transition-all duration-500 ease-in-out hover:scale-105"
       >
         <div style={{ display: "inline-block" }}>
           <h2 style={{ display: "inline-block" }} className="mr-12">

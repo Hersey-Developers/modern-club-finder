@@ -2,6 +2,8 @@ import React from "react";
 import CenterBox from "../components/Staff/CenterBox";
 import '../components/Staff/styles/Staff.css'
 import Contact from "../components/Homepage/Contact";
+
+
 const StaffPage = () => {
   return (
     <div className="h-screen bg-gradient-to-r from-orange to-red flex flex-col items-center justify-center ">
