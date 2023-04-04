@@ -1,5 +1,5 @@
 class Clubs {
-    constructor([clubName, categories, description, date, time, room, sponsor]) {
+    constructor([clubName, categories, description, date, time, room, sponsor, email]) {
         this.clubName = clubName;
         this.categories = categories;
         this.description = description;
@@ -7,6 +7,7 @@ class Clubs {
         this.time = time;
         this.room = room;
         this.sponsor = sponsor;
+        this.email = email;
     }
 
     getClubName() {
@@ -35,6 +36,10 @@ class Clubs {
 
     getSponsor() {
         return `Sponsored by ${this.sponsor}`;
+    }
+
+    getEmail() {
+        return this.email;
     }
 }
 
