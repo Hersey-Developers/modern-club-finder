@@ -1,5 +1,6 @@
 class Clubs {
-    constructor([clubName, categories, description, date, time, room, sponsor, email]) {
+    constructor([id, clubName, categories, description, date, time, room, sponsor, email]) {
+        this.id = id;
         this.clubName = clubName;
         this.categories = categories;
         this.description = description;

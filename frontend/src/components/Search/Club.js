@@ -6,14 +6,16 @@ import Modal from "../../pages/Modal";
 
 const Club = (props) => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedClub, setSelectedClub] = useState(null);
 
-  const handleClick = () => {
+  const handleClick = (id) => {
+    setSelectedClub(id)
     setShowModal(!showModal);
   };
 
-
   const clubsShown = [
     [
+      "2134234234",
       "Hersey Hack Club",
       ["Coding", "Math", "Science"],
       "Learn to code and build awesome projects at the JHHS Hack Club! No experience needed",
@@ -24,6 +26,7 @@ const Club = (props) => {
       "bob.brown@d214.org",
     ],
     [
+      "2134234234",
       "Hersey Hack Club",
       ["Coding", "Math", "Science"],
       "Learn to code and build awesome projects at the JHHS Hack Club! No experience needed",
@@ -34,6 +37,7 @@ const Club = (props) => {
       "bob.brown@d214.org",
     ],
     [
+      "2134234234",
       "Hersey Hack Club",
       ["Coding", "Math", "Science"],
       "Learn to code and build awesome projects at the JHHS Hack Club! No experience needed",
@@ -47,25 +51,30 @@ const Club = (props) => {
   const reusableClubArray = [];
 
   clubsShown.forEach((sub) => {
-    reusableClubArray.push(<ReusableClub className="inline-block" sub={sub} />);
+    reusableClubArray.push(
+      <div onClick={() => {
+        handleClick(sub[0])
+      }}>
+        <ReusableClub className="inline-block" sub={sub} />
+      </div>
+    );
   });
 
   return (
     <div
-      onClick={handleClick}
       className="div-margin ml-10 mr-10 grid grid-cols-1 phone: grids-cols-2 gap-2 ml-10 mr-10 tablet:grid-cols-2 gap-2 ml-10 mr-10 laptop:grid-cols-3 gap-2 ml-10 mr-10 desktop:grid-cols-3 gap-5 ml-10 mr-10"
     >
       {reusableClubArray}
       {showModal && (
         <Modal
-          title= "JHHS Hack Club"
+          selectedClub={selectedClub}
+          title="JHHS Hack Club"
           content="Learn to code and build awesome projects at the JHHS Hack Club! No prior experience needed. We also do hackathons, game nights, and more!"
-          date= "Every Monday"
-          time= "4:00PM - 5:00PM"
-          room= "JHHS Room 158"
-          email= "Email Sponsor (Bob Brown)"
-          link= "herseyhack.club"
-
+          date="Every Monday"
+          time="4:00PM - 5:00PM"
+          room="JHHS Room 158"
+          email="Email Sponsor (Bob Brown)"
+          link="herseyhack.club"
           onClose={handleClick}
         />
       )}
