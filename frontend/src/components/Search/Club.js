@@ -15,7 +15,7 @@ const Club = (props) => {
 
   const clubsShown = [
     [
-      "2134234234",
+      "6415cfb2a90acb37c316b6e0",
       "Hersey Hack Club",
       ["Coding", "Math", "Science"],
       "Learn to code and build awesome projects at the JHHS Hack Club! No experience needed",
@@ -24,29 +24,7 @@ const Club = (props) => {
       "158",
       "Bob Brown",
       "bob.brown@d214.org",
-    ],
-    [
-      "2134234234",
-      "Hersey Hack Club",
-      ["Coding", "Math", "Science"],
-      "Learn to code and build awesome projects at the JHHS Hack Club! No experience needed",
-      "Every Friday",
-      "4:00PM - 5:00PM",
-      "158",
-      "Bob Brown",
-      "bob.brown@d214.org",
-    ],
-    [
-      "2134234234",
-      "Hersey Hack Club",
-      ["Coding", "Math", "Science"],
-      "Learn to code and build awesome projects at the JHHS Hack Club! No experience needed",
-      "Every Friday",
-      "4:00PM - 5:00PM",
-      "158",
-      "Bob Brown",
-      "bob.brown@d214.org",
-    ],
+    ]
   ];
   const reusableClubArray = [];
 
