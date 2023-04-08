@@ -1,11 +1,15 @@
 import React from "react";
 import StaffHeader from "../components/StaffHome/StaffHeader";
 import '../components/StaffHome/styles/StaffHomeStyles.css'
+import ClubRender from "../components/StaffHome/ClubRender";
 
 const StaffHome = () => {
   return (
-    <div>
+    <div className="pl-7">
         <StaffHeader />
+        <h1 className="pt-14 font-bold text-3xl">My Sponsored Activities</h1>
+        <button type="button" className="mt-5 bg-[#007AFF] hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-lg relative">+ Add New Activity</button>
+        <ClubRender />
     </div>
   );
 };
