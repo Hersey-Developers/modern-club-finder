@@ -1,20 +1,30 @@
-const csrf = require('csrf'); // csrf protection library
+const Tokens = require('csrf');
 
-const csrfProtection = csrf();
+// create a new instance of the Tokens class
+const tokens = new Tokens({
+  saltLength: 16,
+  secretLength: 32,
+});
 
-// sets the CSRF token in the header
+// generate a new secret
+const secret = tokens.secretSync();
+
+// generate a CSRF token for the secret
+const token = tokens.create(secret);
+
+// set the CSRF token in the response header
 exports.setCsrfHeader = async(req, res, next) => {
-  res.setHeader('X-CSRF-Token', req.csrfToken());
+  res.setHeader('X-CSRF-Token', token);
   next();
 }
 
-// validates the CSRF token in the request handler
+// validate the CSRF token in the request handler
 exports.validateCsrfHeader = async(req, res, next) => {
-  const csrfToken = req.headers['X-CSRF-Token'];
-  if(!csrfProtection.verify(req.csrfSecret, csrfToken)){
+  const csrfToken = req.headers['x-csrf-token'];
+  if (!tokens.verify(secret, csrfToken)) {
     return res.status(403).json({
       error: 'Access Denied',
-      errorMessage: 'You do not have permission to access this resource' // input value
+      errorMessage: 'You do not have permission to access this resource'
     });
   }
   next();

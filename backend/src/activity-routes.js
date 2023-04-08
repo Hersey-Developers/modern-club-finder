@@ -8,16 +8,6 @@ const router = express.Router();
 
 // Activities Test Objects in MongoDB:
 
-// 6406ba77f7046e089abb7f12
-    // name: "Test"
-    // categories: ["Test 1", "Test 2", "Test 3"]
-    // description: "Test"
-    // meetingDays: ["Monday", "Tuesday"]
-    // meetingStartEndTimes: "9:00AM-10:00PM"
-    // location: "Hersey"
-    // link: "https://www.google.com"
-    // displayedPublically: false
-
 // 6406baf375deec242f93ce5f
     // name: "Test 2"
     // categories: ["Test 1", "Test 2", "Test 3"]
@@ -29,7 +19,7 @@ const router = express.Router();
     // displayedPublically: false
 // Get all Activity objects
 
-router.get("/", Auth.setCsrfHeader, Auth.checkToken, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const query = {};
     if (req.query.name) {
@@ -49,7 +39,7 @@ router.get("/", Auth.setCsrfHeader, Auth.checkToken, async (req, res) => {
   }
 });
 // Get a specific Activity object
-router.get("/:activityId", Auth.setCsrfHeader, Auth.checkToken, async (req, res, next) => {
+router.get("/:activityId", async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
     const activityId = req.params.activityId;
 
