@@ -1,16 +1,19 @@
+
 import React, { useEffect, useState } from "react";
 import { FaCalendar, FaClock, FaMapMarkerAlt, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
 
+
 function Modal(props) {
   const myArray = [
+
     { text: props.date, icon: <FaCalendar /> },
     { text: props.time, icon: <FaClock /> },
     { text: props.room, icon: <FaMapMarkerAlt /> },
   ];
 
   const myArrayTwo = [
-    { text: props.email, icon: <FaEnvelope /> },
-    { text: props.link, icon: <FaExternalLinkAlt /> },
+    { text: <a href={props.email} style={{ color: "#007AFF" }} target="_blank" rel="noopener noreferrer">{props.email}</a>, icon: <img src={Email} alt="Email Icon" style={{ width: "22px"}} /> },
+    { text: <a href={props.link} style={{ color: "#007AFF" }} target="_blank" rel="noopener noreferrer">herseyhack.club</a>, icon: <img src={Link} alt="Link Icon" style={{ width: "22px"}} /> },
   ];
 
   const [data, setData] = useState({activity: {
@@ -46,6 +49,7 @@ function Modal(props) {
 
   return (
     <>
+
       <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur">
         <div className="relative z-10 bg-white rounded-lg p-8 shadow-lg max-w-lg">
           <div className="flex justify-between items-center mb-4">
