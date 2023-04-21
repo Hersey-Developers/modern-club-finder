@@ -11,10 +11,6 @@ function Modal(props) {
     { text: props.room, icon: <FaMapMarkerAlt /> },
   ];
 
-  const myArrayTwo = [
-    { text: <a href={props.email} style={{ color: "#007AFF" }} target="_blank" rel="noopener noreferrer">{props.email}</a>, icon: <img src={Email} alt="Email Icon" style={{ width: "22px"}} /> },
-    { text: <a href={props.link} style={{ color: "#007AFF" }} target="_blank" rel="noopener noreferrer">herseyhack.club</a>, icon: <img src={Link} alt="Link Icon" style={{ width: "22px"}} /> },
-  ];
 
   const [data, setData] = useState({activity: {
     name: '',
