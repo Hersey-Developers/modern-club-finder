@@ -42,10 +42,6 @@ const CenterBox = () => {
     );
     const selectedDays = Array.from(days).map((day) => day.id);
 
-    console.log('name:', name);
-    console.log('selectedCategories:', selectedCategories);
-    console.log('selectedDays:', selectedDays);
-
     const queryParams = new URLSearchParams({
       name: name,
       categories: selectedCategories.join(","),
