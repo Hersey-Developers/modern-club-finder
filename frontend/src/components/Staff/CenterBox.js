@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import Chevron from "../Homepage/resources/Chevron.png";
 import Checkbox from "./Checkbox";
+import { useHistory } from 'react-router-dom';
 
 const CenterBox = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,11 +22,31 @@ const CenterBox = () => {
       setShowWarning(false);
     }
   };
+  
+  const history = useHistory();
 
   const handleLoginClick = () => {
+    setShowEmptyFieldsError(false);
     if (!email || !password) {
       setShowEmptyFieldsError(true);
+      return;
     }
+
+    const user = {email, password};
+
+    fetch('http://localhost:5000/users/login', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(user)
+    })
+    .then((res) => res.json())
+    .then((response) => {
+      console.log(response)
+
+      if (!response.errorMessage) {
+        history.push('/staffhome')
+      }
+    });
   };
 
   return (
