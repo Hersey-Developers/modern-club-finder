@@ -3,7 +3,7 @@ import { changeClass } from "./script/changeClass.js";
 
 const DaysOfWeek = (props) => {
   const handleClick = () => {
-    changeClass(props.day);
+    changeClass(props.day, "day-clicked");
   };
 
   return (

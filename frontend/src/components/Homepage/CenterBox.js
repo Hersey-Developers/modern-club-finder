@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Category from "./Category";
 import DaysOfWeek from "./DaysOfWeek";
 import Vector from "../Homepage/resources/Vector.png";
@@ -8,22 +8,48 @@ import Chevron from "../Homepage/resources/Chevron.png";
 import { useHistory } from "react-router-dom";
 
 const CenterBox = () => {
+
+  const [selectedSubjects, setSelectedSubjects] = useState([]);
+  const [selectedDays, setSelectedDays] = useState([]);
+
   const subjects = ["Coding", "Math", "Science", "English", "History"];
   const subComponents = [];
   subjects.forEach((sub) => {
-    subComponents.push(<Category sub={sub} />);
+    subComponents.push(
+    <Category 
+    sub={sub} 
+    />);
   });
 
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   const dayComponents = [];
   days.forEach((day) => {
-    dayComponents.push(<DaysOfWeek day={day} />);
+    dayComponents.push(
+      <DaysOfWeek
+      day={day}
+    />
+    );
   });
 
   const history = useHistory();
 
-  const handleClick = () => {
-    history.push("/searchpage");
+   const handleClick = () => {
+    const name = document.getElementById("my-text-field").value.trim();
+    const categories = document.querySelectorAll(".category-clicked");
+    const days = document.querySelectorAll(".day-clicked");
+    const selectedCategories = Array.from(categories).map(
+      (category) => category.id
+    );
+    const selectedDays = Array.from(days).map((day) => day.id);
+
+    const queryParams = new URLSearchParams({
+      name: name,
+      categories: selectedCategories.join(","),
+      availableDays: selectedDays.join(","),
+    });
+    const search = queryParams.toString() ? `?${queryParams.toString()}` : "";
+    
+    history.push(`/searchpage${search}`);
   };
 
   return (
