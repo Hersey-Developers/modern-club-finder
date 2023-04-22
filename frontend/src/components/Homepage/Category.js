@@ -4,7 +4,7 @@ import { changeClass } from "./script/changeClass.js";
 const Category = (props) => {
   const inlineBlock = { display: "inline-block" };
   const handleClick = () => {
-    changeClass(props.sub);
+    changeClass(props.sub, "category-clicked");
   };
 
   return (
