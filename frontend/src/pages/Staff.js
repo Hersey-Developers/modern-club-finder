@@ -1,8 +1,7 @@
 import React from "react";
 import CenterBox from "../components/Staff/CenterBox";
-import '../components/Staff/styles/Staff.css'
+import "../components/Staff/styles/Staff.css";
 import Contact from "../components/Homepage/Contact";
-
 
 const StaffPage = () => {
   return (
@@ -11,7 +10,6 @@ const StaffPage = () => {
         <CenterBox />
         <Contact />
       </div>
-      
     </div>
   );
 };
