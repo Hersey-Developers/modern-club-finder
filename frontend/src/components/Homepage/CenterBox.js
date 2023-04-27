@@ -124,7 +124,7 @@ const CenterBox = () => {
         </div>
       </button>
 
-      <button className="all-button mt-2">Show me all clubs!</button>
+      <button onClick={() => history.push('/searchpage')} className="all-button mt-2">Show me all clubs!</button>
     </div>
   );
 };
