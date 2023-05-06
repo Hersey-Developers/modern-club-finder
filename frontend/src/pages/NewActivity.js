@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StaffHeader from "../components/StaffHome/StaffHeader";
 import "../components/StaffHome/styles/StaffHomeStyles.css";
 import { useHistory } from "react-router-dom";
@@ -96,8 +96,6 @@ const NewActivity = () => {
       
     }
 
-    
-    
     fetch('https://hersey-club-finder.herokuapp.com/activities', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -110,12 +108,31 @@ const NewActivity = () => {
         console.log(response.errorMessage);
       }
     })
+
+    localStorage.removeItem("editedData");
   }
+
+  const handleEdit = () => {
+    let editedData = {
+      ...data,
+    }
+
+    localStorage.setItem("editedData", JSON.stringify(editedData));
+
+    history.push('/staffhome');
+  }
+
+  useEffect(() => {
+    JSON.parse(localStorage.getItem("editedData"));
+    console.log(JSON.parse(localStorage.getItem("editedData")));
+  }, []);
 
   return (
     <div>
       <StaffHeader />
-      <p className="pt-6 pl-6 text-[#007AFF]">&#60; Cancel (does not save)</p>
+      <p onClick={() => {
+        handleEdit();
+      }} className="pt-6 pl-6 text-[#007AFF]">&#60; Cancel</p>
       <h1 className="pt-7 pl-6 font-bold text-3xl">New Activity</h1>
 
 
