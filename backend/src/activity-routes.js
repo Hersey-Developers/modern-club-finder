@@ -67,7 +67,6 @@ router.get("/:activityId", async (req, res, next) => {
 });
 
 // Create a new Activity object
-
 router.post("/", Auth.validateCsrfHeader, async (req, res) => {
     try {
       const activity = new Activity(req.body);
