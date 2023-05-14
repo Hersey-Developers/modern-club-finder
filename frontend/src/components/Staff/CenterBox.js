@@ -31,9 +31,9 @@ const CenterBox = () => {
       setShowEmptyFieldsError(true);
       return;
     }
-
+  
     const user = {email, password};
-
+  
     fetch('http://localhost:5000/users/login', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
@@ -42,12 +42,19 @@ const CenterBox = () => {
     .then((res) => res.json())
     .then((response) => {
       console.log(response)
-
+  
       if (!response.errorMessage) {
-        history.push('/staffhome')
+        // Save JWT token to local storage
+        localStorage.setItem('jwt', response.token);
+        localStorage.setItem('userId', response.userId);
+        history.push({
+          pathname: '/staffhome',
+          state: { userId: response.userId }
+        });
       }
     });
   };
+  
 
   return (
     <div className="bg-box-staff">

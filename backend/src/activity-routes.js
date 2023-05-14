@@ -38,6 +38,7 @@ router.get("/", async (req, res) => {
     res.status(400).send("Failed to retrieve activities");
   }
 });
+
 // Get a specific Activity object
 router.get("/:activityId", async (req, res, next) => {
     // --- YOUR CODE GOES UNDER THIS LINE --- 
@@ -67,8 +68,7 @@ router.get("/:activityId", async (req, res, next) => {
 });
 
 // Create a new Activity object
-
-router.post("/", Auth.validateCsrfHeader, async (req, res) => {
+router.post("/", async (req, res) => {
     try {
       const activity = new Activity(req.body);
       await activity.save();
