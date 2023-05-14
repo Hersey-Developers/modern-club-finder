@@ -215,7 +215,7 @@ const NewActivity = () => {
         name="description"
         rows="4"
         placeholder="Description"
-        class="bg-[#E1E1E1] w-96 focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none ml-6"
+        className="bg-[#E1E1E1] w-96 focus:shadow-soft-primary-outline min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none ml-6"
       ></textarea>
       <p className="pt-4 pl-6 pb-3">Meeting Days</p>
       <form className="pl-6">
