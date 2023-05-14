@@ -98,6 +98,7 @@ router.post("/login",
             .trim(),
     ],
     async (req, res) => {
+        console.log("Received login request");
         const email = req.body.email;
         const password = req.body.password;
         const errors = validationResult(req);
